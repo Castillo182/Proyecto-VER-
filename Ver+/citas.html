@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citas | Ver+</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/auth.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="citas">
+
+<div class="dashboard-layout">
+
+  <div id="pacienteSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Agenda médica</span>
+        <h1>Citas con especialistas</h1>
+        <p>Primero solicita un doctor; después podrás ver sus horarios y agendar una cita.</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="form-group">
+        <label>Selecciona el niño</label>
+
+        <input type="hidden" id="nino_id">
+
+        <div id="selectorNinosCards" class="child-selector">
+          <p>Cargando perfiles...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-content patient-grid">
+
+      <div class="panel" id="panelSolicitud">
+        <div class="panel-header">
+          <h2>Solicitar doctor</h2>
+        </div>
+
+        <p class="muted-text">
+          Si tu hijo aún no tiene doctor asignado, envía una solicitud al administrador.
+        </p>
+
+        <form id="formSolicitudDoctor">
+          <div class="form-group">
+            <label for="motivoSolicitud">Motivo de la solicitud</label>
+            <textarea id="motivoSolicitud" rows="5" placeholder="Ej. Deseo seguimiento visual por posible estrabismo, falta de seguimiento ocular, revisión preventiva, etc."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary auth-btn">
+            Enviar solicitud
+          </button>
+        </form>
+
+        <p id="mensajeSolicitud" class="auth-message"></p>
+      </div>
+
+      <div class="panel" id="panelAgenda">
+        <div class="panel-header">
+          <h2>Agendar cita</h2>
+        </div>
+
+        <div id="doctorAsignadoInfo" class="timeline-item">
+          <p>Selecciona un niño para consultar doctor asignado.</p>
+        </div>
+
+        <form id="formCita" style="display:none; margin-top: 18px;">
+          <div class="form-group">
+            <label for="horario_id">Horario disponible</label>
+            <select id="horario_id" required>
+              <option value="">Selecciona un horario</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="motivoCita">Motivo de la cita</label>
+            <textarea id="motivoCita" rows="4" placeholder="Describe brevemente el motivo de la cita"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary auth-btn">
+            Confirmar cita
+          </button>
+        </form>
+
+        <p id="mensajeCita" class="auth-message"></p>
+      </div>
+
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Mis citas</h2>
+      </div>
+
+      <div id="listaCitas" class="timeline-list">
+        <p>Selecciona un niño para ver sus citas.</p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/cargarPacienteSidebar.js"></script>
+<script type="module" src="js/pages/citas.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

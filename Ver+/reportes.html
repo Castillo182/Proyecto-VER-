@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportes | Ver+</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="reportes">
+
+<div class="dashboard-layout">
+
+  <div id="pacienteSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Reporte visual</span>
+        <h1>Reportes del paciente</h1>
+        <p>Genera un resumen imprimible del seguimiento visual infantil.</p>
+      </div>
+    </header>
+
+    <section class="panel no-print">
+      <div class="form-group">
+        <label>Selecciona el niño</label>
+
+        <input type="hidden" id="selectorNino">
+
+        <div id="selectorNinosCards" class="child-selector">
+          <p>Cargando perfiles...</p>
+        </div>
+      </div>
+
+      <button id="btnImprimir" class="btn btn-primary">
+        Imprimir / guardar PDF
+      </button>
+    </section>
+
+    <section class="panel" id="reporte">
+      <div id="contenidoReporte">
+        <p>Selecciona un niño para generar su reporte.</p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/cargarPacienteSidebar.js"></script>
+<script type="module" src="js/pages/reportes.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

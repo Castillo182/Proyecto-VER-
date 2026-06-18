@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Ver+</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="dashboard">
+
+<div class="dashboard-layout">
+
+  <div id="pacienteSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Expediente visual</span>
+        <h1 id="tituloDashboard">Dashboard del paciente</h1>
+        <p id="usuario">Cargando usuario...</p>
+      </div>
+
+      <div class="header-card">
+        <i data-lucide="shield-check"></i>
+        <span>Sesión segura</span>
+      </div>
+    </header>
+
+    <section class="patient-selector-card" id="selectorContainer">
+      <label>Selecciona un niño</label>
+
+      <input type="hidden" id="selectorNino">
+
+      <div id="selectorNinosCards" class="child-selector">
+        <p>Cargando perfiles...</p>
+      </div>
+    </section>
+
+    <section id="sinNinos" class="empty-state" style="display:none;">
+      <i data-lucide="baby"></i>
+      <h2>No hay niños registrados</h2>
+      <p>Registra primero un perfil infantil para comenzar el seguimiento visual.</p>
+      <a href="perfil_nino.html" class="btn btn-primary">Registrar niño</a>
+    </section>
+
+    <section id="expedientePaciente" style="display:none;">
+
+      <section class="patient-summary">
+        <div class="patient-main-card">
+          <div class="patient-avatar">
+            <i data-lucide="baby"></i>
+          </div>
+
+          <div>
+            <h2 id="nombreNino">Nombre del niño</h2>
+            <p id="datosNino">Edad y género</p>
+            <p id="historialNino">Historial visual</p>
+          </div>
+        </div>
+
+        <div class="patient-status-card">
+          <span>Estado visual actual</span>
+          <h2 id="estadoVisual">Sin evaluación</h2>
+          <p id="ultimaEvaluacion">Sin pruebas registradas</p>
+        </div>
+      </section>
+
+      <section class="dashboard-cards">
+        <div class="dash-card cyan">
+          <i data-lucide="clipboard-check"></i>
+          <p>Pruebas realizadas</p>
+          <h2 id="totalPruebas">0</h2>
+        </div>
+
+        <div class="dash-card yellow">
+          <i data-lucide="activity"></i>
+          <p>Último resultado</p>
+          <h2 id="ultimoResultado">N/A</h2>
+        </div>
+
+        <div class="dash-card green">
+          <i data-lucide="bell"></i>
+          <p>Alertas pendientes</p>
+          <h2 id="totalAlertas">0</h2>
+        </div>
+
+        <div class="dash-card blue">
+          <i data-lucide="calendar"></i>
+          <p>Próxima cita</p>
+          <h2 id="proximaCita">Sin cita</h2>
+        </div>
+      </section>
+
+      <section class="dashboard-content patient-grid">
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Historial médico visual</h2>
+          </div>
+          <div class="medical-history">
+            <p id="historialMedicoTexto">Sin observaciones registradas.</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Acciones rápidas</h2>
+          </div>
+
+          <div class="quick-actions">
+            <a href="prueba_visual.html">
+              <i data-lucide="eye"></i>
+              Realizar prueba visual
+            </a>
+
+            <a href="perfil_nino.html">
+              <i data-lucide="edit"></i>
+              Editar perfil
+            </a>
+
+            <a href="citas.html">
+              <i data-lucide="calendar-plus"></i>
+              Agendar cita
+            </a>
+
+            <a href="reportes.html">
+              <i data-lucide="file-bar-chart"></i>
+              Generar reporte
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="dashboard-content patient-grid">
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Últimas pruebas visuales</h2>
+          </div>
+          <div id="listaPruebas" class="timeline-list">
+            <p>Cargando pruebas...</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Próximas citas</h2>
+          </div>
+          <div id="listaCitas" class="timeline-list">
+            <p>Cargando citas...</p>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="dashboard-content patient-grid">
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Alertas y anomalías</h2>
+          </div>
+          <div id="listaAlertas" class="timeline-list">
+            <p>Cargando alertas...</p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Recomendaciones</h2>
+          </div>
+          <div id="listaRecomendaciones" class="timeline-list">
+            <p>Cargando recomendaciones...</p>
+          </div>
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/cargarPacienteSidebar.js"></script>
+<script type="module" src="js/pages/dashboard.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

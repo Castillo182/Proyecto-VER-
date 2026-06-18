@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Iniciar Sesión | Ver+</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <section class="auth-container">
+
+            <div class="auth-info">
+
+                <a href="index.html" class="auth-logo">
+                    <div class="logo-icon">
+                        <i data-lucide="eye"></i>
+                    </div>
+                    <span>Ver+</span>
+                </a>
+
+                <span class="badge">Monitoreo Visual Temprano</span>
+
+                <h1>
+                    Bienvenido de nuevo a
+                    <span>Ver+</span>
+                </h1>
+
+                <p>
+                    Accede al panel de control para consultar perfiles,
+                    evaluaciones visuales, recomendaciones y alertas del seguimiento infantil.
+                </p>
+
+                <div class="auth-mini-card">
+                    <div>
+                        <i data-lucide="shield-check"></i>
+                    </div>
+
+                    <p>
+                        <strong>Plataforma segura</strong>
+                        <span>Información protegida para padres y especialistas.</span>
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="auth-card">
+
+                <h2>Iniciar sesión</h2>
+
+                <p class="auth-subtitle">
+                    Ingresa tus datos para continuar.
+                </p>
+
+                <form id="formLogin">
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email"
+                               id="email"
+                               placeholder="correo@ejemplo.com"
+                               required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password"
+                               id="password"
+                               placeholder="Ingresa tu contraseña"
+                               required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary auth-btn">
+                        Iniciar sesión
+                    </button>
+
+                </form>
+
+                <p id="mensaje" class="auth-message"></p>
+
+                <p class="auth-footer">
+                    ¿No tienes cuenta?
+                    <a href="registro.html">Crear cuenta</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="js/auth/login.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>

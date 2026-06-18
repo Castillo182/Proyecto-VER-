@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar perfil | Ver+</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/auth.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="perfil_nino">
+
+<div class="dashboard-layout">
+
+  <div id="pacienteSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Expediente del paciente</span>
+        <h1>Editar perfil del niño</h1>
+        <p>Consulta y actualiza los datos personales, edad, género e historial visual.</p>
+      </div>
+    </header>
+
+    <section class="dashboard-content patient-grid">
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2 id="tituloFormulario">Registrar niño</h2>
+        </div>
+
+        <form id="formNino">
+
+          <input type="hidden" id="nino_id">
+
+          <div class="form-group">
+            <label for="nombre">Nombre del niño</label>
+            <input type="text" id="nombre" placeholder="Ej. Sofía García" required>
+          </div>
+
+          <div class="form-group">
+            <label for="edad_meses">Edad en meses</label>
+            <input type="number" id="edad_meses" min="0" max="36" required>
+          </div>
+
+          <div class="form-group">
+            <label for="genero">Género</label>
+            <select id="genero" required>
+              <option value="">Selecciona género</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Masculino">Masculino</option>
+              <option value="No especificado">No especificado</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="historial_visual">Historial visual / observaciones</label>
+            <textarea id="historial_visual" rows="5" placeholder="Antecedentes familiares, uso de lentes, reacción a la luz, estrabismo, etc."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary auth-btn">
+            Guardar perfil
+          </button>
+
+          <button type="button" id="btnCancelar" class="btn btn-outline auth-btn" style="display:none;">
+            Cancelar edición
+          </button>
+
+        </form>
+
+        <p id="mensaje" class="auth-message"></p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Perfiles registrados</h2>
+        </div>
+
+        <div id="listaNinos" class="child-list">
+          <p>Cargando perfiles...</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/cargarPacienteSidebar.js"></script>
+<script type="module" src="js/pages/perfil_nino.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

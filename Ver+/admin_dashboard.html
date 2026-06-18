@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Ver+</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="admin_dashboard">
+
+<div class="dashboard-layout">
+
+  <div id="adminSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Panel administrativo</span>
+        <h1>Dashboard del administrador</h1>
+        <p id="adminInfo">Cargando información...</p>
+      </div>
+
+      <div class="header-card">
+        <i data-lucide="shield-check"></i>
+        <span>Administrador</span>
+      </div>
+    </header>
+
+    <section class="dashboard-cards">
+
+      <div class="dash-card cyan">
+        <i data-lucide="users"></i>
+        <p>Usuarios registrados</p>
+        <h2 id="totalUsuarios">0</h2>
+      </div>
+
+      <div class="dash-card yellow">
+        <i data-lucide="stethoscope"></i>
+        <p>Doctores pendientes</p>
+        <h2 id="doctoresPendientes">0</h2>
+      </div>
+
+      <div class="dash-card green">
+        <i data-lucide="baby"></i>
+        <p>Pacientes registrados</p>
+        <h2 id="totalPacientes">0</h2>
+      </div>
+
+      <div class="dash-card blue">
+        <i data-lucide="clipboard-check"></i>
+        <p>Pruebas visuales</p>
+        <h2 id="totalPruebas">0</h2>
+      </div>
+
+    </section>
+
+    <section class="dashboard-content patient-grid">
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Doctores pendientes de aprobación</h2>
+        </div>
+
+        <div id="listaDoctoresPendientes" class="child-list">
+          <p>Cargando doctores...</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Usuarios recientes</h2>
+        </div>
+
+        <div id="listaUsuarios" class="child-list">
+          <p>Cargando usuarios...</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+<script src="js/cargarAdminSidebar.js"></script>
+
+<script type="module" src="js/pages/admin_dashboard.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

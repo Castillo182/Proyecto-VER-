@@ -1,0 +1,95 @@
+.navbar {
+  height: 76px;
+  padding: 0 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eef2f7;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo span {
+  font-weight: 800;
+  font-size: 22px;
+  color: #0f172a;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 34px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.navbar nav a {
+  color: #0f172a;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.navbar nav a:hover {
+  color: #14b8a6;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.acciones a {
+  text-decoration: none;
+}
+
+.acciones a:first-child {
+  color: #008b89;
+}
+
+.acciones a:first-child:hover {
+  color: #14b8a6;
+}
+
+.acciones .btn {
+  padding: 12px 20px;
+  border-radius: 14px;
+  background: #14b8a6;
+  color: white;
+}
+
+.acciones .btn:hover {
+  background: #0f766e;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 22px;
+  }
+
+  .navbar nav {
+    display: none;
+  }
+
+  .navbar-logo {
+    width: 48px;
+    height: 48px;
+  }
+}

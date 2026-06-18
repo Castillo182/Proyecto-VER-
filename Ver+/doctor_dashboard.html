@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Dashboard | Ver+</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="doctor_dashboard">
+
+<div class="dashboard-layout">
+
+  <div id="doctorSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Panel médico</span>
+        <h1>Dashboard del especialista</h1>
+        <p id="doctorInfo">Cargando información...</p>
+      </div>
+
+      <div class="header-card">
+        <i data-lucide="stethoscope"></i>
+        <span>Doctor aprobado</span>
+      </div>
+    </header>
+
+    <section class="dashboard-cards">
+      <div class="dash-card cyan">
+        <i data-lucide="users"></i>
+        <p>Pacientes asignados</p>
+        <h2 id="totalPacientes">0</h2>
+      </div>
+
+      <div class="dash-card yellow">
+        <i data-lucide="clock"></i>
+        <p>Horarios disponibles</p>
+        <h2 id="totalHorarios">0</h2>
+      </div>
+
+      <div class="dash-card green">
+        <i data-lucide="calendar"></i>
+        <p>Citas programadas</p>
+        <h2 id="totalCitas">0</h2>
+      </div>
+
+      <div class="dash-card blue">
+        <i data-lucide="clipboard-check"></i>
+        <p>Pruebas registradas</p>
+        <h2 id="totalPruebas">0</h2>
+      </div>
+    </section>
+
+    <section class="dashboard-content patient-grid">
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Acciones rápidas</h2>
+        </div>
+
+        <div class="quick-actions">
+          <a href="doctor_pacientes.html">
+            <i data-lucide="users"></i>
+            Ver pacientes asignados
+          </a>
+
+          <a href="doctor_horarios.html">
+            <i data-lucide="clock"></i>
+            Configurar horarios
+          </a>
+
+          <a href="doctor_citas.html">
+            <i data-lucide="calendar"></i>
+            Ver citas programadas
+          </a>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Pacientes recientes</h2>
+        </div>
+
+        <div id="pacientesRecientes" class="child-list">
+          <p>Cargando pacientes...</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/cargarDoctorSidebar.js"></script>
+<script type="module" src="js/pages/doctor_dashboard.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

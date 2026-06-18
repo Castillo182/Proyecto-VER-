@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca digital | Ver+</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="biblioteca">
+
+<div class="dashboard-layout">
+
+  <div id="pacienteSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Educación visual</span>
+        <h1>Biblioteca digital</h1>
+        <p>Consulta artículos, guías y consejos sobre salud visual infantil.</p>
+      </div>
+    </header>
+
+    <section class="dashboard-cards">
+      <div class="dash-card cyan">
+        <i data-lucide="book-open"></i>
+        <p>Artículos</p>
+        <h2 id="totalArticulos">0</h2>
+      </div>
+
+      <div class="dash-card yellow">
+        <i data-lucide="file-text"></i>
+        <p>Guías</p>
+        <h2 id="totalGuias">0</h2>
+      </div>
+
+      <div class="dash-card green">
+        <i data-lucide="lightbulb"></i>
+        <p>Consejos</p>
+        <h2 id="totalConsejos">0</h2>
+      </div>
+
+      <div class="dash-card blue">
+        <i data-lucide="eye"></i>
+        <p>Temas visuales</p>
+        <h2 id="totalTemas">0</h2>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Buscar contenido</h2>
+      </div>
+
+      <input
+        type="text"
+        id="buscador"
+        class="search-input"
+        placeholder="Buscar por título, tema o tipo de contenido...">
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Contenido educativo</h2>
+      </div>
+
+      <div id="listaBiblioteca" class="library-grid">
+        <p>Cargando biblioteca...</p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/cargarPacienteSidebar.js"></script>
+<script type="module" src="js/pages/biblioteca.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

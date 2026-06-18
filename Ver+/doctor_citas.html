@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citas | Ver+ Doctor</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="doctor_citas">
+
+<div class="dashboard-layout">
+
+  <div id="doctorSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Citas médicas</span>
+        <h1>Mis citas programadas</h1>
+        <p>Consulta las citas agendadas por tus pacientes.</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Agenda</h2>
+      </div>
+
+      <div id="listaCitas" class="timeline-list">
+        <p>Cargando citas...</p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/cargarDoctorSidebar.js"></script>
+<script type="module" src="js/pages/doctor_citas.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

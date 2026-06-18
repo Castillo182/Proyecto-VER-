@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios | Ver+ Admin</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body data-page="admin_usuarios">
+
+<div class="dashboard-layout">
+
+  <div id="adminSidebar"></div>
+
+  <main class="dashboard-main">
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Gestión de usuarios</span>
+        <h1>Usuarios del sistema</h1>
+        <p>Consulta usuarios registrados por rol y estado.</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Lista de usuarios</h2>
+      </div>
+
+      <div id="listaUsuarios" class="child-list">
+        <p>Cargando usuarios...</p>
+      </div>
+    </section>
+  </main>
+
+</div>
+<script src="js/cargarAdminSidebar.js"></script>
+
+<script type="module" src="js/pages/admin_usuarios.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

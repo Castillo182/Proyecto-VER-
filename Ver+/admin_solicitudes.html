@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitudes | Ver+ Admin</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="admin_solicitudes">
+
+<div class="dashboard-layout">
+
+  <div id="adminSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Solicitudes médicas</span>
+        <h1>Asignación de doctores</h1>
+        <p>Revisa solicitudes de tutores y asigna un especialista al paciente.</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Solicitudes pendientes</h2>
+      </div>
+
+      <div id="listaSolicitudes" class="child-list">
+        <p>Cargando solicitudes...</p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/cargarAdminSidebar.js"></script>
+<script type="module" src="js/pages/admin_solicitudes.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

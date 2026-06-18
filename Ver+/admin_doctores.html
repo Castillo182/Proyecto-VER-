@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctores | Ver+ Admin</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="admin_doctores">
+
+<div class="dashboard-layout">
+
+  <div id="adminSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Gestión médica</span>
+        <h1>Doctores registrados</h1>
+        <p>Consulta, aprueba y administra especialistas registrados en Ver+.</p>
+      </div>
+
+      <div class="header-card">
+        <i data-lucide="stethoscope"></i>
+        <span>Panel médico</span>
+      </div>
+    </header>
+
+    <section class="dashboard-cards">
+      <div class="dash-card cyan">
+        <i data-lucide="users"></i>
+        <p>Total de doctores</p>
+        <h2 id="totalDoctores">0</h2>
+      </div>
+
+      <div class="dash-card yellow">
+        <i data-lucide="clock-3"></i>
+        <p>Pendientes</p>
+        <h2 id="pendientes">0</h2>
+      </div>
+
+      <div class="dash-card green">
+        <i data-lucide="badge-check"></i>
+        <p>Aprobados</p>
+        <h2 id="aprobados">0</h2>
+      </div>
+
+      <div class="dash-card blue">
+        <i data-lucide="ban"></i>
+        <p>Rechazados</p>
+        <h2 id="rechazados">0</h2>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Buscar doctor</h2>
+      </div>
+
+      <input
+        type="text"
+        id="buscarDoctor"
+        placeholder="Buscar por nombre, especialidad o cédula..."
+        class="search-input">
+    </section>
+
+    <section class="dashboard-content patient-grid">
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Lista de doctores</h2>
+        </div>
+
+        <div id="listaDoctores" class="child-list">
+          <p>Cargando doctores...</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Historial de aprobaciones</h2>
+        </div>
+
+        <div id="historialAprobaciones" class="timeline-list">
+          <p>Cargando historial...</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<div id="modalDoctor" class="modal-overlay" style="display:none;">
+  <div class="modal-card">
+    <h2 id="modalNombre">Perfil del doctor</h2>
+
+    <p id="modalEstado"></p>
+
+    <div class="form-group">
+      <label>Especialidad</label>
+      <input type="text" id="modalEspecialidad">
+    </div>
+
+    <div class="form-group">
+      <label>Cédula profesional</label>
+      <input type="text" id="modalCedula">
+    </div>
+
+    <div class="child-actions">
+      <button id="guardarDoctor" class="btn-edit">Guardar cambios</button>
+      <button id="cerrarModal" class="btn-delete">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/cargarAdminSidebar.js"></script>
+<script type="module" src="js/pages/admin_doctores.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>

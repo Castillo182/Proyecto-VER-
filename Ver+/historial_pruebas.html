@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historial de pruebas | Ver+</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="historial_pruebas">
+
+<div class="dashboard-layout">
+
+  <div id="pacienteSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Historial visual</span>
+        <h1>Historial de pruebas</h1>
+        <p>Consulta todas las evaluaciones realizadas al paciente.</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="form-group">
+        <label>Selecciona el niño</label>
+
+        <input type="hidden" id="selectorNino">
+
+        <div id="selectorNinosCards" class="child-selector">
+          <p>Cargando perfiles...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Pruebas registradas</h2>
+      </div>
+
+      <div id="listaHistorial" class="timeline-list">
+        <p>Selecciona un niño para ver su historial.</p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/cargarPacienteSidebar.js"></script>
+<script type="module" src="js/pages/historial_pruebas.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>

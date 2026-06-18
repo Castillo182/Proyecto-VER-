@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba visual | Ver+</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/auth.css">
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body data-page="prueba_visual">
+
+<div class="dashboard-layout">
+
+  <div id="pacienteSidebar"></div>
+
+  <main class="dashboard-main">
+
+    <header class="dashboard-header">
+      <div>
+        <span class="badge">Evaluación visual</span>
+        <h1>Pruebas visuales rutinarias</h1>
+        <p>Realiza evaluaciones guiadas desde casa y guarda el historial del paciente.</p>
+      </div>
+    </header>
+
+    <section class="dashboard-content patient-grid">
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Datos de la prueba</h2>
+        </div>
+
+        <form id="formPrueba">
+
+          <div class="form-group">
+            <label>Selecciona el niño</label>
+
+            <input type="hidden" id="nino_id" required>
+
+            <div id="selectorNinosCards" class="child-selector">
+              <p>Cargando perfiles...</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tipo_prueba">Tipo de prueba</label>
+            <select id="tipo_prueba" required>
+              <option value="">Selecciona una prueba</option>
+              <option value="Seguimiento visual">Seguimiento visual</option>
+              <option value="Estímulos de colores">Estímulos de colores</option>
+              <option value="Formas y contraste">Formas y contraste</option>
+              <option value="Coordinación ojo-mano">Coordinación ojo-mano</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="resultado">Resultado observado</label>
+            <select id="resultado" required>
+              <option value="">Selecciona resultado</option>
+              <option value="Adecuado">Adecuado</option>
+              <option value="Requiere observación">Requiere observación</option>
+              <option value="Posible anomalía">Posible anomalía</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="observaciones">Observaciones</label>
+            <textarea id="observaciones" rows="5" placeholder="Describe lo que observaste durante la prueba."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary auth-btn">
+            Guardar prueba
+          </button>
+
+        </form>
+
+        <p id="mensaje" class="auth-message"></p>
+      </div>
+
+      <div class="panel test-preview-panel">
+        <div class="panel-header">
+          <h2 id="tituloPrueba">Selecciona una prueba</h2>
+        </div>
+
+        <div id="contenidoPrueba" class="test-guide">
+          <div class="test-empty">
+            <i data-lucide="eye"></i>
+            <p>Cuando selecciones una prueba, aquí aparecerán las instrucciones paso a paso.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="js/cargarPacienteSidebar.js"></script>
+<script type="module" src="js/pages/prueba_visual.js"></script>
+<script>lucide.createIcons();</script>
+
+</body>
+</html>
